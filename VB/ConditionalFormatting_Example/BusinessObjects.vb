@@ -1,5 +1,4 @@
-﻿Imports Microsoft.VisualBasic
-Imports System
+﻿Imports System
 Imports System.Collections.Generic
 Imports System.Linq
 Imports System.Text
@@ -9,31 +8,22 @@ Imports DevExpress.Spreadsheet
 Imports System.ComponentModel
 
 Namespace ConditionalFormatting_Example
-	Public Class SpreadsheetNode
+    Public Class SpreadsheetNode
+
         Private groups_Renamed As New GroupsOfSpreadsheetExamples()
+
         Private owner_Renamed As GroupsOfSpreadsheetExamples
-        Private fName As String
 
         Public Sub New(ByVal name As String)
-            fName = name
+            Me.Name = name
         End Sub
-
-        Public Property Name As String
-            Get
-                Return fName
-            End Get
-            Set(value As String)
-                fName = value
-            End Set
-        End Property
-
         <Browsable(False)> _
         Public ReadOnly Property Groups() As GroupsOfSpreadsheetExamples
             Get
                 Return groups_Renamed
             End Get
         End Property
-
+        Public Property Name() As String
 
         <Browsable(False)> _
         Public Property Owner() As GroupsOfSpreadsheetExamples
@@ -44,33 +34,31 @@ Namespace ConditionalFormatting_Example
                 owner_Renamed = value
             End Set
         End Property
-	End Class
+    End Class
 
-	Public Class SpreadsheetExample
+    Public Class SpreadsheetExample
         Inherits SpreadsheetNode
-
-        Private fAction As Action(Of IWorkbook)
 
         Public Sub New(ByVal name As String, ByVal action As Action(Of IWorkbook))
             MyBase.New(name)
-            fAction = action
+            Me.Action = action
         End Sub
-
-
-        Public Property Action As Action(Of IWorkbook)
+        Private privateAction As Action(Of IWorkbook)
+        Public Property Action() As Action(Of IWorkbook)
             Get
-                Return fAction
+                Return privateAction
             End Get
             Private Set(ByVal value As Action(Of IWorkbook))
-                fAction = value
+                privateAction = value
             End Set
         End Property
-	End Class
+    End Class
 
-	Public Class GroupsOfSpreadsheetExamples
+    Public Class GroupsOfSpreadsheetExamples
         Inherits BindingList(Of SpreadsheetNode)
         Implements TreeList.IVirtualTreeListData
-        Private Sub VirtualTreeGetChildNodes(ByVal info As VirtualTreeGetChildNodesInfo) Implements TreeList.IVirtualTreeListData.VirtualTreeGetChildNodes
+
+        Private Sub IVirtualTreeListData_VirtualTreeGetChildNodes(ByVal info As VirtualTreeGetChildNodesInfo) Implements TreeList.IVirtualTreeListData.VirtualTreeGetChildNodes
             Dim obj As SpreadsheetNode = TryCast(info.Node, SpreadsheetNode)
             info.Children = obj.Groups
         End Sub
@@ -78,19 +66,19 @@ Namespace ConditionalFormatting_Example
             item.Owner = Me
             MyBase.InsertItem(index, item)
         End Sub
-        Private Sub VirtualTreeGetCellValue(ByVal info As VirtualTreeGetCellValueInfo) Implements TreeList.IVirtualTreeListData.VirtualTreeGetCellValue
+        Private Sub IVirtualTreeListData_VirtualTreeGetCellValue(ByVal info As VirtualTreeGetCellValueInfo) Implements TreeList.IVirtualTreeListData.VirtualTreeGetCellValue
             Dim obj As SpreadsheetNode = TryCast(info.Node, SpreadsheetNode)
             Select Case info.Column.Caption
                 Case "Name"
                     info.CellData = obj.Name
             End Select
         End Sub
-        Private Sub VirtualTreeSetCellValue(ByVal info As VirtualTreeSetCellValueInfo) Implements TreeList.IVirtualTreeListData.VirtualTreeSetCellValue
+        Private Sub IVirtualTreeListData_VirtualTreeSetCellValue(ByVal info As VirtualTreeSetCellValueInfo) Implements TreeList.IVirtualTreeListData.VirtualTreeSetCellValue
             Dim obj As SpreadsheetNode = TryCast(info.Node, SpreadsheetNode)
             Select Case info.Column.Caption
                 Case "Name"
                     obj.Name = CStr(info.NewCellData)
             End Select
         End Sub
-	End Class
+    End Class
 End Namespace
