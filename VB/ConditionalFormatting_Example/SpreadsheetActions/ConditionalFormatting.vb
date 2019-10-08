@@ -46,9 +46,9 @@ Namespace ConditionalFormatting_Example
                 cfRule2.Formatting.Fill.BackgroundColor = Color.FromArgb(255, &H9F, &HFB, &H69)
                 ' Set the font color to blue-violet.
                 cfRule2.Formatting.Font.Color = Color.BlueViolet
-'                #End Region ' #AverageConditionalFormatting
+                '                #End Region ' #AverageConditionalFormatting
                 ' Add an explanation to the created rule.
-                Dim ruleExplanation As Range = worksheet.Range("A17:G18")
+                Dim ruleExplanation As CellRange = worksheet.Range("A17:G18")
                 ruleExplanation.Value = "Determine cost values that are above the average in the first quarter and one standard deviation below the mean in the second quarter."
             Finally
                 workbook.EndUpdate()
@@ -69,9 +69,9 @@ Namespace ConditionalFormatting_Example
                 cfRule.Formatting.Fill.BackgroundColor = Color.FromArgb(255, &HFA, &HF7, &HAA)
                 ' Set the font color to red.
                 cfRule.Formatting.Font.Color = Color.Red
-'                #End Region ' #RangeConditionalFormatting
+                '                #End Region ' #RangeConditionalFormatting
                 ' Add an explanation to the created rule.
-                Dim ruleExplanation As Range = worksheet.Range("A17:G18")
+                Dim ruleExplanation As CellRange = worksheet.Range("A17:G18")
                 ruleExplanation.Value = "Identify book prices that are below $7 and above $19."
             Finally
                 workbook.EndUpdate()
@@ -94,9 +94,9 @@ Namespace ConditionalFormatting_Example
                 cfRule.Formatting.Borders.SetOutsideBorders(Color.Black, BorderLineStyle.Thin)
                 ' Set the font color to white.
                 cfRule.Formatting.Font.Color = Color.White
-'                #End Region ' #RankConditionalFormatting
+                '                #End Region ' #RankConditionalFormatting
                 ' Add an explanation to the created rule.
-                Dim ruleExplanation As Range = worksheet.Range("A17:G18")
+                Dim ruleExplanation As CellRange = worksheet.Range("A17:G18")
                 ruleExplanation.Value = "Identify the top three price values."
             Finally
                 workbook.EndUpdate()
@@ -115,9 +115,9 @@ Namespace ConditionalFormatting_Example
                 ' Specify formatting options to be applied to cells if the condition is true.
                 ' Set the background color to pink.
                 cfRule.Formatting.Fill.BackgroundColor = Color.FromArgb(255, &HE1, &H95, &HC2)
-'                #End Region ' #TextConditionalFormatting
+                '                #End Region ' #TextConditionalFormatting
                 ' Add an explanation to the created rule.
-                Dim ruleExplanation As Range = worksheet.Range("A17:G18")
+                Dim ruleExplanation As CellRange = worksheet.Range("A17:G18")
                 ruleExplanation.Value = "Quickly find books written by Ray Bradbury."
             Finally
                 workbook.EndUpdate()
@@ -137,9 +137,9 @@ Namespace ConditionalFormatting_Example
                 ' Specify formatting options to be applied to cells if the condition is true.
                 ' Set the background color to yellow.
                 cfRule.Formatting.Fill.BackgroundColor = Color.FromArgb(255, &HFA, &HF7, &HAA)
-'                #End Region ' #SpecialConditionalFormatting
+                '                #End Region ' #SpecialConditionalFormatting
                 ' Add an explanation to the created rule.
-                Dim ruleExplanation As Range = worksheet.Range("A17:G18")
+                Dim ruleExplanation As CellRange = worksheet.Range("A17:G18")
                 ruleExplanation.Value = "In a list of authors quickly identify unique values."
             Finally
                 workbook.EndUpdate()
@@ -159,9 +159,9 @@ Namespace ConditionalFormatting_Example
                 ' Specify formatting options to be applied to cells if the condition is true.
                 ' Set the background color to pink.
                 cfRule.Formatting.Fill.BackgroundColor = Color.FromArgb(255, &HF2, &HAE, &HE3)
-'                #End Region ' #TimePeriodConditionalFormatting
+                '                #End Region ' #TimePeriodConditionalFormatting
                 ' Add an explanation to the created rule.
-                Dim ruleExplanation As Range = worksheet.Range("A8:B9")
+                Dim ruleExplanation As CellRange = worksheet.Range("A8:B9")
                 ruleExplanation.Value = "Determine the today's task in the TO DO list."
             Finally
                 workbook.EndUpdate()
@@ -183,9 +183,9 @@ Namespace ConditionalFormatting_Example
                 cfRule.Formatting.Fill.BackgroundColor = Color.FromArgb(255, &HFA, &HF7, &HAA)
                 ' Set the font color to red.
                 cfRule.Formatting.Font.Color = Color.Red
-'                #End Region ' #ExpressionConditionalFormatting
+                '                #End Region ' #ExpressionConditionalFormatting
                 ' Add an explanation to the created rule.
-                Dim ruleExplanation As Range = worksheet.Range("A17:G18")
+                Dim ruleExplanation As CellRange = worksheet.Range("A17:G18")
                 ruleExplanation.Value = "Identify book prices that are greater than the average price."
             Finally
                 workbook.EndUpdate()
@@ -205,9 +205,9 @@ Namespace ConditionalFormatting_Example
                 ' Specify formatting options to be applied to cells if the condition is true.
                 ' Set the background color to light blue.
                 cfRule.Formatting.Fill.BackgroundColor = Color.FromArgb(255, &HBC, &HDA, &HF7)
-'                #End Region ' #FormulaExpressionConditionalFormatting
+                '                #End Region ' #FormulaExpressionConditionalFormatting
                 ' Add an explanation to the created rule.
-                Dim ruleExplanation As Range = worksheet.Range("A17:G18")
+                Dim ruleExplanation As CellRange = worksheet.Range("A17:G18")
                 ruleExplanation.Value = "Shade alternate rows in light blue without applying a new style."
             Finally
                 workbook.EndUpdate()
@@ -228,9 +228,9 @@ Namespace ConditionalFormatting_Example
                 Dim maxPoint As ConditionalFormattingValue = conditionalFormattings.CreateValue(ConditionalFormattingValueType.MinMax)
                 ' Create the two-color scale rule to differentiate low and high values in cells C2 through D15. Blue represents the lower values and yellow represents the higher values. 
                 Dim cfRule As ColorScale2ConditionalFormatting = conditionalFormattings.AddColorScale2ConditionalFormatting(worksheet.Range("$C$2:$D$15"), minPoint, Color.FromArgb(255, &H9D, &HE9, &HFA), maxPoint, Color.FromArgb(255, &HFF, &HF6, &HA9))
-'                #End Region ' #ColorScale2ConditionalFormatting
+                '                #End Region ' #ColorScale2ConditionalFormatting
                 ' Add an explanation to the created rule.
-                Dim ruleExplanation As Range = worksheet.Range("A17:G18")
+                Dim ruleExplanation As CellRange = worksheet.Range("A17:G18")
                 ruleExplanation.Value = "Examine cost distribution using a gradation of two colors. Blue represents the lower values and yellow represents the higher values."
             Finally
                 workbook.EndUpdate()
@@ -254,9 +254,9 @@ Namespace ConditionalFormatting_Example
                 Dim maxPoint As ConditionalFormattingValue = conditionalFormattings.CreateValue(ConditionalFormattingValueType.Number, "=MAX($C$2:$D$15)")
                 ' Create the three-color scale rule to determine how values in cells C2 through D15 vary. Red represents the lower values, yellow represents the medium values and sky blue represents the higher values.
                 Dim cfRule As ColorScale3ConditionalFormatting = conditionalFormattings.AddColorScale3ConditionalFormatting(worksheet.Range("$C$2:$D$15"), minPoint, Color.Red, midPoint, Color.Yellow, maxPoint, Color.SkyBlue)
-'                #End Region ' #ColorScale3ConditionalFormatting
+                '                #End Region ' #ColorScale3ConditionalFormatting
                 ' Add an explanation to the created rule.
-                Dim ruleExplanation As Range = worksheet.Range("A17:G18")
+                Dim ruleExplanation As CellRange = worksheet.Range("A17:G18")
                 ruleExplanation.Value = "Examine cost distribution using a gradation of three colors. Red represents the lower values, yellow represents the medium values and sky blue represents the higher values."
             Finally
                 workbook.EndUpdate()
@@ -300,9 +300,9 @@ Namespace ConditionalFormatting_Example
                 cfRule2.GradientFill = False
                 ' Hide values of cells to which the rule is applied.
                 cfRule2.ShowValue = False
-'                #End Region ' #DataBarConditionalFormatting
+                '                #End Region ' #DataBarConditionalFormatting
                 ' Add an explanation to the created rule.
-                Dim ruleExplanation As Range = worksheet.Range("A17:G18")
+                Dim ruleExplanation As CellRange = worksheet.Range("A17:G18")
                 ruleExplanation.Value = "Compare values in the ""Cost Trend"" and ""Markup"" columns using data bars."
             Finally
                 workbook.EndUpdate()
@@ -337,9 +337,9 @@ Namespace ConditionalFormatting_Example
                 cfRule.SetCustomIcon(1, cfCustomIcon)
                 ' Hide values of cells to which the rule is applied.
                 cfRule.ShowValue = False
-'                #End Region ' #IconSetConditionalFormatting
+                '                #End Region ' #IconSetConditionalFormatting
                 ' Add an explanation to the created rule.
-                Dim ruleExplanation As Range = worksheet.Range("A17:G18")
+                Dim ruleExplanation As CellRange = worksheet.Range("A17:G18")
                 ruleExplanation.Value = "Identify upward and downward cost trends."
             Finally
                 workbook.EndUpdate()
