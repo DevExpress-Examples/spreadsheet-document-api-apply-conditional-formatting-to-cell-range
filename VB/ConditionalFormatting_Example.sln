@@ -1,4 +1,4 @@
-﻿Microsoft Visual Studio Solution File, Format Version 12.00
+Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ConditionalFormatting_Example", "ConditionalFormatting_Example\ConditionalFormatting_Example.vbproj", "{97812B8D-1437-4CF1-A14D-01DDE6654DBF}"
 EndProject
