@@ -11,7 +11,7 @@
 * [Program.cs](./CS/ConditionalFormatting_Example/Program.cs) (VB: [Program.vb](./VB/ConditionalFormatting_Example/Program.vb))
 * [ConditionalFormatting.cs](./CS/ConditionalFormatting_Example/SpreadsheetActions/ConditionalFormatting.cs) (VB: [ConditionalFormatting.vb](./VB/ConditionalFormatting_Example/SpreadsheetActions/ConditionalFormatting.vb))
 <!-- default file list end -->
-# How to apply conditional formatting to a range of cells
+# Spreadsheet Document API - Apply Conditional Formatting to a Cell Range
 
 
 <p>This example illustrates how to get started with conditional formatting that can be applied to cells that match a certain condition specified by a conditional formatting rule.</p>
