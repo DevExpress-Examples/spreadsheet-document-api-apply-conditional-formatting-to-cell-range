@@ -12,9 +12,9 @@ In particular, this sample demonstrates how to use the Spreadsheet Document API 
 
 - a rule that formats cells whose values are above or below the average;
 - a rule that highlights cells whose values are between or not between two specified values;
-- a rule that formats top or bottom ranked values;
+- a rule that formats top or bottom-ranked values;
 - a rule that highlights cells containing the given text;
-- a rule that formats unique or duplicate values, blank cells and formula errors;
+- a rule that formats unique or duplicate values, blank cells, and formula errors;
 - a rule that highlights cells containing dates in the specified time period;
 - a rule that formats cells whose values meet the condition expressed by the relational operator;
 - a rule that uses a formula to determine which cells to format;
@@ -24,7 +24,7 @@ In particular, this sample demonstrates how to use the Spreadsheet Document API 
 - an icon set conditional formatting rule.
 
 > [!note]
-> The [Universal Subscription]() or an additional [Office File API Subscription]() is required to use this example in production code. Please refer to the following page for pricing information: [DevExpress Subscription](https://www.devexpress.com/Buy/NET/)
+> The [Universal Subscription](https://www.devexpress.com/subscriptions/universal.xml) or an additional [Office File API Subscription](https://www.devexpress.com/products/net/office-file-api/) is required to use this example in production code. Please refer to the following page for pricing information: [DevExpress Subscription](https://www.devexpress.com/Buy/NET/)
 
 ## Files to Review
 
