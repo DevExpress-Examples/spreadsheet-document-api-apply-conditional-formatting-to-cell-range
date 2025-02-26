@@ -69,7 +69,7 @@ namespace ConditionalFormatting_Example
         {
             #region #LoadDocumentFromFile
             // Load a workbook from a file.
-            workbook.LoadDocument("Documents\\Document.xlsx", DocumentFormat.OpenXml);
+            workbook.LoadDocument("..\\..\\..\\Documents\\Document.xlsx", DocumentFormat.OpenXml);
             #endregion #LoadDocumentFromFile
         }
 
@@ -77,9 +77,9 @@ namespace ConditionalFormatting_Example
         {
             #region #SaveDocumentToFile
             // Save the modified document to a file.
-            workbook.SaveDocument("Documents\\SavedDocument.xlsx", DocumentFormat.OpenXml);
+            workbook.SaveDocument("..\\..\\..\\Documents\\SavedDocument.xlsx", DocumentFormat.OpenXml);
             #endregion #SaveDocumentToFile
-            Process.Start("Documents\\SavedDocument.xlsx");
+            Process.Start(new ProcessStartInfo("..\\..\\..\\Documents\\SavedDocument.xlsx") { UseShellExecute = true });
         }
     }
 }

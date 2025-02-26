@@ -61,16 +61,16 @@ Namespace ConditionalFormatting_Example
         Private Sub LoadDocumentFromFile()
 #Region "#LoadDocumentFromFile"
             ' Load a workbook from a file.
-            workbook.LoadDocument("Documents\Document.xlsx", DocumentFormat.OpenXml)
-#End Region  ' #LoadDocumentFromFile
+            workbook.LoadDocument("..\..\..\Documents\Document.xlsx", DocumentFormat.OpenXml)
+#End Region
         End Sub
 
         Private Sub SaveDocumentToFile()
 #Region "#SaveDocumentToFile"
             ' Save the modified document to a file.
-            workbook.SaveDocument("Documents\SavedDocument.xlsx", DocumentFormat.OpenXml)
-#End Region  ' #SaveDocumentToFile
-            Call Process.Start("Documents\SavedDocument.xlsx")
+            workbook.SaveDocument("..\..\..\Documents\SavedDocument.xlsx", DocumentFormat.OpenXml)
+#End Region
+            Call Process.Start(New ProcessStartInfo("..\..\..\Documents\SavedDocument.xlsx") With {.UseShellExecute = True})
         End Sub
     End Class
 End Namespace
